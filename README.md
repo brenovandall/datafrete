@@ -1,7 +1,7 @@
 # Olá, Datafrete!
 
 Primeiramente, gostaria de me apresentar. Me chamo Breno Van-Dall e estou no mercado de T.I a um pouco mais de 1 ano.
-Comecei meus estudos em desenvolvimento de software exatamente há um ano, e desde então, tenho me aprofundado em .NET em seu todo, desde a construção de uma API até a construção de microsserviços com CQRS, orquestração, docker, RDS, etc. Neste teste prático me desafiei a construir o sistema proposto desde o princípio, tendo em vista que este foi meu primeiro contato com PHP e VueJS.
+Comecei meus estudos em desenvolvimento de software exatamente há um ano, e desde então, tenho me aprofundado em .NET em seu todo, desde a construção de uma API até a construção de microsserviços com CQRS, orquestração, docker, RDS, etc. Neste teste prático me desafiei a construir o sistema proposto desde o princípio, tendo em vista que este foi meu primeiro contato com PHP e VueJS, porém, já estou muito animado e ansioso para entrar no mundo do PHP e me aprofundar no mesmo.
 Tech technologies: PHP, VueJS3, Phinx, Docker, Laragon e MariaDB.
 
 # Setup
