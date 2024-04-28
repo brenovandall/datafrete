@@ -34,19 +34,3 @@ if($action == 'adicionar' && $param == '') {
         }
     }
 }
-
-// este método faz a validação se o cep de fato existe
-if($action == 'validar' && $param == '') {
-    $cep = isset($_GET['cep']) ? $_GET['cep'] : null;
-    $cep = preg_replace("/[^0-9]/", "", $cep); // retira qualquer tipo de caracter que não seja número
-
-    $service = new CepAbertoService();
-
-    $data = $service->verificaCepExistente($cep); // faz a requisição para a API CEP Aberto
-    
-    if ($data != null) {
-        echo json_encode($data); // retorna os dados da API CEP Aberto, a latitude e longitude ficará em campos hidden no front end para serem enviados no método adicionar
-    } else {
-        echo "CEP não encontrado";
-    }
-}

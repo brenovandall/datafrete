@@ -47,7 +47,7 @@ export default {
   methods: {
     // Méotodo para validar o cep de origem
     validarCepOrigem(campo) {
-      axios.post(`http://localhost/datafrete/percursos/validar?cep=${this.cepOrigem}`)
+      axios.get(`http://localhost/datafrete/percursos/validar/${this.cepOrigem}`)
         .then(response => {
           if (campo === 'origem') {
             if(response.data.latitude !== undefined || response.data.longitude !== undefined) {
@@ -79,7 +79,7 @@ export default {
     },
     // Méotodo para validar o cep de destino
     validarCepDestino(campo) {
-      axios.post(`http://localhost/datafrete/percursos/validar?cep=${this.cepDestino}`)
+      axios.get(`http://localhost/datafrete/percursos/validar/${this.cepDestino}`)
         .then(response => {
           if (campo === 'destino') {
             if(response.data.latitude !== undefined || response.data.longitude !== undefined) {
