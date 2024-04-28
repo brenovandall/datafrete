@@ -1,9 +1,11 @@
 <?php
+// Configuração do CORS para aceitar requisições de qualquer origem e qualquer header
 header('Access-Control-Allow-Origin: *');
-header('Content-type: application/json');
+header('Access-Control-Allow-Headers: *');
 
-date_default_timezone_set("America/Sao_Paulo");
+date_default_timezone_set("America/Sao_Paulo"); // define timezone para horário de Sao Paulo (timezone de Blumenau)
 
+// Configuração do Laragon -- >
 if (isset($_GET['path'])) {
     $path = explode("/", $_GET['path']);
 } else { 

@@ -1,24 +1,24 @@
 <?php
 
+// Service responsável pela conversão de duas latitude e longitude (origem e destino) para distância em metros
 class CalcularDistanciaService {
-    function calcularDistancia($lat1, $lon1, $lat2, $lon2)
-    {
-        $lat1 = deg2rad($lat1);
-        $lon1 = deg2rad($lon1);
-        $lat2 = deg2rad($lat2);
-        $lon2 = deg2rad($lon2);
+    // Esta é a função na qual faz o cálculo da distância em metros, conforme minha pesquisas, este é o método mais famoso e eficaz para esta situação. É chamado de fórmula de Haversine
+    // Observações: todos os parâmetros na chamada desta função devem ser passados em radiano...
+    function calcularDistancia($latitudeOrigem, $longitudeOrigem, $latitudeDestino, $longitudeDestino) {
+        $raioDaTerra = 6371000; // raio da Terra em metros
+        $latitudeOrigem = deg2rad($latitudeOrigem);
+        $longitudeOrigem = deg2rad($longitudeOrigem);
+        $latitudeDestino = deg2rad($latitudeDestino);
+        $longitudeDestino = deg2rad($longitudeDestino);
 
-        $dlat = $lat2 - $lat1;
-        $dlon = $lon2 - $lon1;
+        $dlatitude = $latitudeDestino - $latitudeOrigem;
+        $dlongitude = $longitudeDestino - $longitudeOrigem;
 
-        $a = sin($dlat / 2) * sin($dlat / 2) + cos($lat1) * cos($lat2) 
-            * sin($dlon / 2) * sin($dlon / 2);
-        $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
+        $a = sin($dlatitude/2) * sin($dlatitude/2) + cos($latitudeOrigem) * cos($latitudeDestino) * sin($dlongitude/2) * sin($dlongitude/2);
+        $c = 2 * atan2(sqrt($a), sqrt(1-$a));
 
-        $raio = 6371000;
+        $distancia = $raioDaTerra * $c;
 
-        $distancia = $raio * $c;
-
-        return $distancia;
+        return round($distancia, 2); // retorna a distancia em decimal arredondada em 2 casas após a vírgula
     }
 }

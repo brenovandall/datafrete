@@ -6,6 +6,8 @@ use Phinx\Migration\AbstractMigration;
 
 final class Percurso extends AbstractMigration
 {
+    // migration da única tabela necessária para esta aplicação, foi utilizado o Phinx para registrar a migração e aplicar a criação da tabela e/ou alterações
+    // para qualquer alteração neste arquivo, utilize o comando 'vendor/bin/phinx migrate' no terminal do windows ou 'vendor\bin\phinx migrate' no linux
     // https://book.cakephp.org/phinx/0/en/migrations.html#the-change-method
     public function change(): void
     {
