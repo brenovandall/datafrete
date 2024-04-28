@@ -1,0 +1,7 @@
+{
+    "require": {
+        "robmorgan/phinx": "^0.16.0",
+        "react/event-loop": "^1.5",
+        "guzzlehttp/guzzle": "^7.8"
+    }
+}
